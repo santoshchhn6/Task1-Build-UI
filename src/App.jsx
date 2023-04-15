@@ -6,7 +6,7 @@ import LatestArticles from "./components/LatestArticles";
 function App() {
   return (
     <div className="flex flex-col items-center">
-      <div className="border-x w-[1440px]">
+      <div className="border-x w-[1440px] max-lg:w-[752px] max-sm:w-[375px]">
         <Home />
         <AboutUs />
         <LatestArticles />

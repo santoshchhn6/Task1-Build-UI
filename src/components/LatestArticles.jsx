@@ -11,7 +11,7 @@ const LatestArticles = () => {
   const [index, setIndex] = useState(0);
   const [threeArticles, setThreeArticles] = useState([]);
   const numberOfPages = Math.ceil(totalArticles / numberOfCards);
-  const [disableLeft, setDisableLeft] = useState(false);
+  const [disableLeft, setDisableLeft] = useState(true);
   const [disableRight, setDisableRight] = useState(false);
 
   useEffect(() => {
@@ -50,12 +50,12 @@ const LatestArticles = () => {
     "border w-[28px] h-[29px] rounded-[5px]  flex justify-center items-center ease-in-out duration-300 active:scale-95";
 
   return (
-    <div className="h-[994px] pt-[142px] px-[108px]">
-      <h1 className="font-['SansPro-sb']  text-[--secondary-color] text-[56px] tracking-[0.04em] mb-[60px]">
+    <div className=" pt-[142px] max-sm:pt-[132px] px-[108px] max-sm:px-0  flex flex-col max-lg:items-center">
+      <h1 className=" font-['SansPro-sb']  text-[--secondary-color] text-[56px] max-sm:text-[28px] tracking-[0.04em] mb-[60px] max-sm:mb-[23px]">
         Latest Articles
       </h1>
 
-      <div className="w-[1225px] flex justify-between">
+      <div className="flex gap-[41px] max-lg:flex-col max-lg:items-center">
         {threeArticles.map((e, i) => (
           <ArticleCard key={i} data={e} />
         ))}
@@ -71,7 +71,7 @@ const LatestArticles = () => {
         >
           <LeftArrow color={disableLeft ? "#AFAFAF" : "#424961"} />
         </button>
-        <span className="font-['SansPro'] text-[22px] text-[--gray2] mx-[14px]">
+        <span className="font-['SansPro'] text-[22px] text-[22px] text-[--gray2] mx-[14px]">
           {index / numberOfCards + 1}/{numberOfPages}
         </span>
 
